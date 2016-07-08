@@ -3,7 +3,7 @@
         "caption": "Monthly revenue for last year",
         "subCaption": "Harry's SuperMart",
         "xAxisName": "Month",
-        "yAxisName": ["Revenues (In USD)","lifespan","avgHeight"]
+        "yAxisName": ["Revenues (In USD)","share(in %age)","growthrate(in %age)"]
        
         
     },
