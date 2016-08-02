@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+  <meta charset="utf-8"/>
+  <title>Beverage Chart</title>
+</head>
+<body>
+  <p>render</p>
+  <script type="text/javascript" src="js/libraryFile.js"></script>
+  <script type="text/javascript">
+
+
+   var xmlhttp= new XMLHttpRequest(),mychart;
+     xmlhttp.onreadystatechange = function(){   
+       if ( xmlhttp.readyState === 4 && xmlhttp.status === 200 ) {
+         mychart = new RenderChart(500,500,JSON.parse(xmlhttp.responseText));
+         mychart.sumTotal();
+       }
+ };
+ xmlhttp.open('GET','data/bev.json',true);
+ xmlhttp.send();
+  </script>
+</body>
+</html>
