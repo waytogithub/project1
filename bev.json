@@ -1,112 +1,368 @@
 {
- "chart":{
-"caption":"Beverage Chart",
-"subcaption":"Profit and Sales"
- },
-"data":[{              
-  "productType":"Coffee",
-  "values":[{
-   "product":"Amaretto",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
+   "chart":{
+      "caption":"Beverage Chart",
+      "subcaption":"Profit and Sales"
    },
-   {"product":"Columbian",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   },
-   {"product":"Decaf Irish Cream",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   }
-  ]
-},
- {
- "productType":"Espresso",
- "values":[{
-   "product":"Caffe Latte",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   },
-   {"product":"Caffe Mocha",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   },
-   {"product":"Decaf Espresso",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   },
-   {"product":"Regular Espresso",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   }
-]
-},
-{
- "productType":"Herbal Tea",
- "values":[{
-   "product":"Chamomile",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   },
-   {"product":"Lemon",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   },
-   {"product":"Mint",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   }
-  ]
- 
- },
- {
- "productType":"Tea",
- "values":[{
-   "product":"Darjeeling",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   },
-   {"product":"East Grey",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   },
-   {"product":"Green Tea",
-   "central":{"Prof":"$5105","Sales":"$14011"},
-   "east":{"Prof":"$5105","Sales":"$14011"},
-   "west":{"Prof":"$5105","Sales":"$14011"},
-   "south":{"Prof":"$5105","Sales":"$14011"}
-   }
-  ]
- }
-] 
+   "dataset":[
+      {
+         "product type":"Coffee",
+         "values":[
+            {
+               "zone":"Central",
+               "data":[
+                  {
+                     "product":"Amaretto",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Columbian",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Decaf Irish Cream",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"East",
+               "data":[
+                  {
+                     "product":"Amaretto",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Columbian",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Decaf Irish Cream",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"South",
+               "data":[
+                  {
+                     "product":"Amaretto",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Columbian",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Decaf Irish Cream",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"West",
+               "data":[
+                  {
+                     "product":"Amaretto",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Columbian",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Decaf Irish Cream",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "product type":"Espresso",
+         "values":[
+            {
+               "zone":"Central",
+               "data":[
+                  {
+                     "product":"Caffe Latto",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Caffe Mocha",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Decaf Espresso",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Regular Espresso",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"East",
+               "data":[
+                  {
+                     "product":"Caffe Latto",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Caffe Mocha",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Decaf Espresso",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Regular Espresso",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"South",
+               "data":[
+                  {
+                     "product":"Caffe Latto",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Caffe Mocha",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Decaf Espresso",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Regular Espresso",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"West",
+               "data":[
+                  {
+                     "product":"Caffe Latto",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Caffe Mocha",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Decaf Espresso",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Regular Espresso",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "product type":"Herbal Tea",
+         "values":[
+            {
+               "zone":"Central",
+               "data":[
+                  {
+                     "product":"Chamomite",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Lemon",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Mint",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"East",
+               "data":[
+                  {
+                     "product":"Chamomoite",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Lemon",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Mint",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"South",
+               "data":[
+                  {
+                     "product":"Chamomoite",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Lemon",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Mint",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"West",
+               "data":[
+                  {
+                     "product":"Amaretto",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Columbian",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Decaf Irish Cream",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "product type":"Tea",
+         "values":[
+            {
+               "zone":"Central",
+               "data":[
+                  {
+                     "product":"Darjeeling",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"East Grey",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Green Tea",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"East",
+               "data":[
+                  {
+                     "product":"Darjeeling",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"East Grey",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Green Tea",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"South",
+               "data":[
+                  {
+                     "product":"Darjeeling",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"East Grey",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Green Tea",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            },
+            {
+               "zone":"West",
+               "data":[
+                  {
+                     "product":"Darjeeling",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"East Grey",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  },
+                  {
+                     "product":"Green Tea",
+                     "sop":"$5105",
+                     "sos":"$14011"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
 }
-  
- 
- 
-
-
- 
