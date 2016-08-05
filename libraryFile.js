@@ -3,7 +3,7 @@ function RenderChart(chartHeight,chartWidth,chartData){
 this.chartHeight=chartHeight;
 this.chartWidth=chartWidth;
 this.chartData=chartData;
-
+//console.log(getVal(this.chartData,"Espresso","East","Caffe Mocha"));
 }
 
 RenderChart.prototype.calSumTotal = function(chartData) {
@@ -29,27 +29,32 @@ RenderChart.prototype.calSumTotal = function(chartData) {
    sumTotal[i]={"sumArray":sumArray};
  
  }
-val=getVal(this.chartData,"Espresso","Central","Caffe Mocha");
-var max=getMaxSop(this.chartData);
-console.log(max);
-render(this.chartData,this.chartHeight,this.chartWidth,max);
+
+var maxSopSos={};
+maxSopSos=getMaxSopSos(this.chartData);
+//console.log(maxSopSos);
+render(this.chartData,this.chartHeight,this.chartWidth,maxSopSos.maxSos);
 
 }
- function getMaxSop(chartData){
-
-var l=chartData.dataset[0].values[0].data[0].sop.length;
-
-var max=parseInt(chartData.dataset[0].values[0].data[0].sop.slice(1,l));
+function getMaxSopSos(chartData){
+var sopLength=chartData.dataset[0].values[0].data[0].sop.length;
+var sosLength=chartData.dataset[0].values[0].data[0].sos.length;
+var maxSop=parseInt(chartData.dataset[0].values[0].data[0].sop.slice(1,sopLength));
+var maxSos=parseInt(chartData.dataset[0].values[0].data[0].sos.slice(1,sosLength));
 for(var i=0;i<chartData.dataset.length;i++){
   for(var j=0;j<chartData.dataset[i].values.length;j++){
     for(k=0;k<chartData.dataset[i].values[j].data.length;k++){
-      l=chartData.dataset[i].values[j].data[k].sop.length;
-      if(parseInt(chartData.dataset[i].values[j].data[k].sop.slice(1,l))>max)
-        max=chartData.dataset[i].values[j].data[k].sop.slice(1,l);
+      sopLength=chartData.dataset[i].values[j].data[k].sop.length;
+      sosLength=chartData.dataset[i].values[j].data[k].sos.length;
+      if(parseInt(chartData.dataset[i].values[j].data[k].sop.slice(1,sopLength))>maxSop)
+        maxSop=chartData.dataset[i].values[j].data[k].sop.slice(1,sopLength);
+      if(parseInt(chartData.dataset[i].values[j].data[k].sos.slice(1,sosLength))>maxSos)
+        maxSos=chartData.dataset[i].values[j].data[k].sos.slice(1,sosLength);
+     
     }
   }
-return max;
 }
+return {"maxSop":maxSop,"maxSos":maxSos};
 }
 function getShade(val){
  if(val>0 && val<1000)
@@ -63,31 +68,47 @@ function getShade(val){
  else return 255;
 
  }
-function render(chartData,chartHeight,chartWidth,max){
-var svgHeight=300; 
-var svgWidth=500;
-var gap=30;
+function render(chartData,chartHeight,chartWidth,maxSos){
+var svgHeight=100; 
+var svgWidth=200;
+var gap=5;
 var margin=20;
-var divisionX=chartWidth/max;
-var val=getVal(this.chartData,"Espresso","Central","Caffe Mocha");
-var divisionY=(svgHeight/(chartData.dataset[0].values[0].data.length))
-var width=divisionX*val;
-var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.setAttribute('width', svgWidth);
-        svg.setAttribute('height', svgHeight);
-        svg.setAttribute("style", "margin:20px");
-        var url = "http://www.w3.org/2000/svg";
-createRect(url,svg,divisionY,width)
-}
+var divisionX=svgWidth/maxSos;
+console.log(maxSos);
+
+//console.log(val);
+
+//console.log(sopVal,sosVal);
+
+var divisionY=(svgHeight/(chartData.dataset[0].values[0].data.length));
+var url = "http://www.w3.org/2000/svg";
+
+//console.log(width);
+
+var divId =document.getElementById("container");
+//console.log(divId);
+var k=0;
+for(var j=0;j<chartData.dataset[k].values.length;j++){
+var svg = document.createElementNS(url, "svg");
+    svg.setAttribute('width', svgWidth);
+    svg.setAttribute('height', svgHeight);
+    divId.appendChild(svg);
+ var line=new Axes(url);
+ line.createLines(svg,((divisionX*j)-1)+margin,margin,((divisionX*j)-1)+margin,(svgHeight-((((chartData.dataset[k].values[j].data.length)-1)*gap))+margin),"stroke:rgb(0,0,0);stroke-width:2");
+ //var text=new Axes(url);
+ //text.createText(svg,((divisionX*j)-1)+margin,margin-10,chartData.dataset[k].values[j].zone,"blue");
+ for(var i=0;i<chartData.dataset[k].values[j].data.length;i++){
+ var canvas=new Canvas(url);
+ //canvas.createLines(svg,svgWidth*i,0,svgWidth*i,svgHeight,"stroke:#000000")
+ var sosLength=chartData.dataset[k].values[j].data[i].sos.length;
+ //console.log(sosLength);
+ var sosVal=parseInt(chartData.dataset[k].values[j].data[i].sos.slice(1,sosLength));
+ //console.log(sosVal);
+ var width=divisionX*sosVal;
+ var height=divisionY-(((chartData.dataset[k].values[j].data.length)-1)*gap);
+ console.log(height);
+ canvas.createRectangle(svg,height,width,margin,margin);
  
-
- function createRect(url,svg,height,width){
-        
-
-        var rec = document.createElementNS(url, "rect");
-            rec.setAttributeNS(null, "height",height);
-            rec.setAttributeNS(null, "width",width);
-            rec.setAttributeNS(null, "fill", "rgba(50,140,90,0.5)");
-            svg.appendChild(rec);
-       
-    }
+ }
+}
+} 
