@@ -1,4 +1,3 @@
-
 function RenderChart(chartHeight,chartWidth,chartData){
 this.chartHeight=chartHeight;
 this.chartWidth=chartWidth;
@@ -70,9 +69,9 @@ function getShade(val){
  }
 function render(chartData,chartHeight,chartWidth,maxSos){
 var svgHeight=100; 
-var svgWidth=200;
+var svgWidth=300;
 var gap=5;
-var margin=20;
+var margin=10;
 var divisionX=svgWidth/maxSos;
 console.log(maxSos);
 
@@ -80,14 +79,16 @@ console.log(maxSos);
 
 //console.log(sopVal,sosVal);
 
-var divisionY=(svgHeight/(chartData.dataset[0].values[0].data.length));
+
 var url = "http://www.w3.org/2000/svg";
 
 //console.log(width);
 
 var divId =document.getElementById("container");
 //console.log(divId);
-var k=0;
+
+for(var k=0;k<chartData.dataset.length;k++){
+
 for(var j=0;j<chartData.dataset[k].values.length;j++){
 var svg = document.createElementNS(url, "svg");
     svg.setAttribute('width', svgWidth);
@@ -95,8 +96,9 @@ var svg = document.createElementNS(url, "svg");
     divId.appendChild(svg);
  var line=new Axes(url);
  line.createLines(svg,((divisionX*j)-1)+margin,margin,((divisionX*j)-1)+margin,(svgHeight-((((chartData.dataset[k].values[j].data.length)-1)*gap))+margin),"stroke:rgb(0,0,0);stroke-width:2");
- //var text=new Axes(url);
- //text.createText(svg,((divisionX*j)-1)+margin,margin-10,chartData.dataset[k].values[j].zone,"blue");
+ var text=new Axes(url);
+ text.createText(svg,((divisionX*j)+(margin*5))+margin,margin,chartData.dataset[k].values[j].zone,"blue");
+ var divisionY=(svgHeight/(chartData.dataset[k].values[j].data.length));
  for(var i=0;i<chartData.dataset[k].values[j].data.length;i++){
  var canvas=new Canvas(url);
  //canvas.createLines(svg,svgWidth*i,0,svgWidth*i,svgHeight,"stroke:#000000")
@@ -105,10 +107,11 @@ var svg = document.createElementNS(url, "svg");
  var sosVal=parseInt(chartData.dataset[k].values[j].data[i].sos.slice(1,sosLength));
  //console.log(sosVal);
  var width=divisionX*sosVal;
- var height=divisionY-(((chartData.dataset[k].values[j].data.length)-1)*gap);
- console.log(height);
- canvas.createRectangle(svg,height,width,margin,margin);
+ //var height=divisionY-(((chartData.dataset[k].values[j].data.length)-1)*gap);
+ //console.log(height);
+ canvas.createRectangle(svg,divisionY-gap,width,margin,(divisionY*i)+margin);
  
  }
 }
-} 
+}
+
